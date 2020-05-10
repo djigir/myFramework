@@ -1,0 +1,12 @@
+Fault: 10-05-2020 15:23:06 - Ощибка подключения к базе данных:1049 Unknown database 'im1'
+fileW:\domains\im.my\public_html\core\base\model\BaseModel.php
+In line19
+
+Fault: 10-05-2020 16:01:19 - Ошибка в SQL запросе: SELECT * FROM articles1 - 1146 Table 'im.articles1' doesn't exist
+fileW:\domains\im.my\public_html\core\base\model\BaseModel.php
+In line30
+
+Fault: 10-05-2020 18:49:13 - Ошибка в SQL запросе: SELECT teachers.id,teachers.name FROM teachers   ORDER BY teachers.fio ASC,teachers.name ASC 1 - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1' at line 1
+fileW:\domains\im.my\public_html\core\base\model\BaseModel.php
+In line30
+

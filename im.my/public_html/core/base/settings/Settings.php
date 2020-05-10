@@ -3,22 +3,28 @@
 namespace core\base\settings;
 
 
+use core\base\controller\Singleton;
+
 class Settings  {
 
-    static private $_instance;
+    use Singleton; // подключение трея синглтон
 
     private $routes = [
         'admin' => [
             'alias' => 'admin',
             'path' => 'core/admin/controller/',
-            'hrUrl' => false // hrUrl - означает human readable URL (читаемый человеком url пример(site/product/iphone-xs))
+            'hrUrl' => false, // hrUrl - означает human readable URL (читаемый человеком url пример(site/product/iphone-xs))
+            'routes' => [
+
+            ]
         ],
         'settings' => [
             'path' => 'core/base/settings/'
         ],
         'plugins' => [
             'path' => 'core/plugins/',
-            'hrUrl' => false // hrUrl - означает human readable URL (читаемый человеком url пример(site/product/iphone-xs))
+            'hrUrl' => false, // hrUrl - означает human readable URL (читаемый человеком url пример(site/product/iphone-xs))
+            'dir' => false
         ],
         'user' => [
             'path' => 'core/user/controller/',
@@ -31,7 +37,8 @@ class Settings  {
             'controller' => 'IndexController',
             'inputMethod' => 'inputData',
             'outputMethod' => 'outputData'
-        ]
+        ],
+
     ];
 
     private $templateArr = [
@@ -41,26 +48,11 @@ class Settings  {
 
     private $lalala = 'lalala';
 
-    private function __construct()
-    {
-    }
-
-    private function __clone()
-    {
-        // TODO: Implement __clone() method.
-    }
-
     // метод для получения приватных свойств данного класса
     static public function get($property) {
         return self::instance()->$property;
     }
 
-    static public function instance() {
-        if  (self::$_instance instanceof self) {
-            return self::$_instance;
-        }
-        return self::$_instance = new self;
-    }
 
     public function clueProperties($class) {
         $baseProperties = [];

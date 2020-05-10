@@ -19,7 +19,7 @@ const ADMIN_CSS_JS = [
 ];
 
 const USER_CSS_JS = [
-    'styles' => [],
+    'styles' => ['css/style.css'],
     'scripts' => []              // пути к ccs и js файлам необходимы для работы страницы юзера
 ];
 
